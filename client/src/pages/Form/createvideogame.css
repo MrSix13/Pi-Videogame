@@ -1,0 +1,127 @@
+.create-container{
+    color: white;
+    padding-top: 15vh;
+}
+
+.form-input{
+    border-radius:20px;
+    padding: 20px;
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.genre-box{
+    background-color: white;
+    width: 70%;
+    height: 10vh;
+    margin: 10px auto;
+    overflow-x: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.genre-box span{
+    font-size: 13px;
+    background-color: rgb(80, 41, 89);
+    margin-right: 10px;
+    border-radius: 20%;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.genre-box span button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.multiple-select{
+    display: flex;
+}
+
+.multiple-select select{
+    height: 5vh;
+    margin: 20px auto;
+    border-radius: 10px;
+    outline: none;
+    width: 20vw;
+}
+
+
+.platforms-box{
+    color: rgb(80, 41, 89);
+}
+
+.submit-button{
+    background-color: rgb(80, 41, 89);
+    width: 80vw;
+    height: 6vh;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    transition: all 400ms;
+}
+
+.submit-button:hover{
+    transform: translateY(-10px);
+}
+.submit-button:active{
+    transform: scale(.8)
+}
+
+@media (min-width: 800px) {
+    .form-input{
+        width: 70vw;
+    }
+    .multiple-select{
+        width: 70vw;
+        margin: 20px auto;
+    }
+
+    .submit-button{
+        width: 70vw;
+    }
+ }
+@media (min-width: 1000px) {
+    .form-input{
+        width: 60vw;
+    }
+    .multiple-select{
+        width: 60vw;
+        margin:20px auto;
+    }
+
+    .submit-button{
+        width: 60vw;
+    }
+ }
+@media (min-width: 1300px) {
+    .form-input{
+        width: 50vw;
+    }
+    .multiple-select{
+        width: 50vw;
+        margin: 20px auto;
+    }
+
+    .submit-button{
+        width: 50vw;
+    }
+ }
+@media (min-width: 1600px) {
+    .form-input{
+        width: 40vw;
+    }
+    .multiple-select{
+        width: 40vw;
+        margin: 20px auto;
+    }
+
+    .submit-button{
+        width: 40vw;
+    }
+ }

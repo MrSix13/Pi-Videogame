@@ -1,0 +1,56 @@
+export const inputs = [
+    {
+      id:1,
+      name: "name",
+      type:"text",
+      placeholder:"Videogame Name",
+      errorMessage: "Videogame Name should be 3-16 characters and shouldn't include any special character!",
+      label: "Name",
+      required: true,
+    },
+    {
+      id:2,
+      name: "description",
+      type:"text",
+      placeholder:"Videogame Description",
+      errorMessage: "Videogame Description should be 24-116 characters and shouldn't include any special character!",
+      label: "Desription",
+      required: true,
+    },
+    {
+      id:3,
+      name: "rating",
+      type:"number",
+      placeholder:"Videogame Rating",
+      errorMessage: "Videogame Description should be 24-116 characters and shouldn't include any special character!",
+      label: "Rating",
+      required: true,
+    },
+    {
+      id:4,
+      name: "released",
+      type:"date",
+      placeholder:"Videogame Date",
+      errorMessage: "Videogame Description should be 24-116 characters and shouldn't include any special character!",
+      label: "Rating",
+      required: true,
+    },
+    {
+      id:5,
+      name: "image",
+      type:"text",
+      placeholder:"Videogame Image",
+      errorMessage: "Videogame Description should be 24-116 characters and shouldn't include any special character!",
+      label: "Image",
+      required: true,
+    },
+]
+
+export const platforms = [
+    'PlayStation 3',
+    'PlayStation 4',
+    'PlayStation 5',
+    'PC',
+    'Xbox Series S',
+    'Xbox Series X',
+]

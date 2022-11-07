@@ -1,0 +1,165 @@
+
+
+.card{
+    margin-top: 20px;
+    background-color: rgb(80, 41, 89);
+    border-radius: 10px;
+    width: 70vw;
+    height: 33vh;
+    margin: 0 auto;
+    margin-left: 45px;
+    color: white;
+    font-family: sans-serif;
+    -webkit-box-shadow: 18px 17px 5px 6px rgba(0,0,0,0.95);
+    -moz-box-shadow: 18px 17px 5px 6px rgba(0,0,0,0.95);
+    box-shadow: 18px 17px 5px 6px rgba(0,0,0,0.95);
+    transition: all 0.4s ease-out;
+    position: relative;
+    overflow: hidden;
+    opacity: .7;
+
+}
+.card-image{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    width: 23em;
+    height: 9em;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover{
+    opacity: 1;
+}
+
+.card:hover .card-image{
+    scale:1.1
+}
+
+.card-rating{
+    background-color: rgb(50, 26, 56);;
+    border-radius: 10%;
+    width: 25%;
+    margin: 0 auto;
+    height: 7%;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.card-info{
+    height: 36%;
+    padding-top: 12px;
+    position: relative;
+}
+.card-info h1{
+    font-size: 19px;
+}
+.card-name{
+    margin-bottom: 17px;
+}
+.card-genres{
+    padding: 6px;
+    margin: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: rgb(50, 26, 56);;
+}
+.card:hover .card-rating{
+    opacity: 1;
+}
+
+.card-favorite{
+    position: absolute;
+    right: .5em;
+    top: 8em;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 20%;
+    color: white;
+    background-color: rgb(80, 41, 89);
+    border: none;
+    cursor: pointer; 
+}
+
+.card-favorite:hover{
+    color: red;
+}
+
+.card-favorite i{
+    font-size: 20px;
+}
+
+@media (min-width: 550px){
+    .card{
+        width: 60vw;
+        margin: 0 auto
+    }
+    .card-image{
+        height: 9em;
+    }
+}
+@media (min-width: 600px){
+    .card{
+        width: 50vw;
+        height: 35vh;
+        margin: 0 auto
+    }
+
+    .card-image{
+        height: 11em;
+    }
+}
+@media (min-width: 720px) {
+    .card{ 
+         width: 50vw;
+    }
+ 
+    .card-rating{
+     right: 0;
+    }
+ }
+
+
+@media (min-width: 800px) {
+   .card{ 
+        width: 40vw;
+        height: 35vh;
+   }
+}
+
+
+@media (min-width: 1000px){
+    .card{
+        width: 34vw;
+    }
+}
+
+@media (min-width: 1200px){
+    .card{
+        width: 30vw;
+    }
+}
+@media (min-width: 1360px){
+    .card{
+        width: 27vw;
+    }
+}
+@media (min-width: 1500px){
+    .card{
+        width: 23vw;
+    }
+}
+@media (min-width: 1800px){
+    .card{
+        width: 19vw;
+    }
+}
+@media (min-width: 1900px){
+    .card{
+        margin-top: 30px;
+        width: 15vw;
+        
+    }
+}
