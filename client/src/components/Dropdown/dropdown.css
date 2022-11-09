@@ -3,6 +3,7 @@
     border-radius: 30px;
     width: 80%;
     margin: 0 auto;
+    transition: all 300ms ease-in;
 }
 
 .dropdown-button{
@@ -12,4 +13,8 @@
     background-color: rgb(80, 41, 89);
     color: white;
     cursor: pointer;
+}
+
+.dropdown_div{
+    transition: all 300ms ease-in;
 }

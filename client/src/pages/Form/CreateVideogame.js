@@ -4,9 +4,11 @@ import './createvideogame.css'
 import {useSelector, useDispatch} from 'react-redux';
 import { inputs, platforms } from './utils';
 import { setVideogame } from '../../redux/actions';
+import {useHistory} from 'react-router-dom'
 
 const CreateVideogame = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const myGenres = useSelector((state)=>state.genres)
   const [values, setValues] = useState({
     name: "",
@@ -18,10 +20,14 @@ const CreateVideogame = () => {
     platforms: []
   })
   const handleSubmit = (e)=>{
-    e.preventDefault();
-    //llamar al dispatch con la funcion => createGame(values)
-    console.log(values)
-    dispatch(setVideogame(values))
+    try {
+      e.preventDefault();
+      dispatch(setVideogame(values))
+      alert("Videogame created succesfully");
+      history.push('/videogames')
+    } catch (error) {
+      alert(error)
+    }
   }
 
   const onChange = (e) => {

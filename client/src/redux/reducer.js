@@ -83,6 +83,12 @@ export default function rootReducer(state = initialState, {type,payload}){
                   videogames: state.videogames.sort((a,b)=>(a.name < b.name) ? -1 : auxAbc)
               }
         case FILTER_RATING:
+                if(payload === "All"){
+                    return{
+                        ...state,
+                        videogames:state.allVideogames
+                    }
+                }
                 let auxRating = 1;
                 if(payload === "MAX_RATING"){auxRating = 1}
                 if(payload === "MIN_RATING"){auxRating = -1}
@@ -91,14 +97,37 @@ export default function rootReducer(state = initialState, {type,payload}){
                 videogames: state.videogames.sort((a,b)=>(a.rating > b.rating) ? -1 : auxRating)
               }
         case FILTER_CREATED:
-            const filterCreated = payload === "db" 
+              if(payload === "All"){
+                return{
+                    ...state,
+                    videogames: state.allVideogames
+                }
+              }      
+
+              /*if(payload === "MyGames"){
+                return{
+                    ...state,
+                    videogames: state.videogames.filter((videogame)=>videogame.createdInDb)
+                }
+              }
+              if(payload === "ApiGames"){
+                    const a = state.videogames.filter((videogame)=>!videogame.createdInDb)
+                    console.log(a)  
+                return{
+                    ...state,
+                    videogames: a
+                  }
+                  
+              }*/
+              
+        const filterCreated = payload === "MyGames" 
                  ? state.allVideogames.filter((videogame)=>videogame.createdInDb)
                  : state.allVideogames.filter((videogame)=>!videogame.createdInDb)
 
-                 console.log(filterCreated)
+                
               return{
                 ...state,
-                videogames: [filterCreated]
+                videogames: filterCreated 
               }
         case ADD_TO_FAVORITES:
             const {id} = payload

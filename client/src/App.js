@@ -8,9 +8,9 @@ import LandingPage from './pages/Home/LandingPage';
 import Navbar from './components/Navbar/Navbar';
 import CreateVideogame from './pages/Form/CreateVideogame';
 import VideogameDetail from './pages/VideogameDetails/VideogameDetail';
-import Loading from './components/Loading/Loading';
 
 function App() {
+  
   const dispatch = useDispatch()
    useEffect(()=>{
       dispatch(getAllVideogames())
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Switch>
-          <Route exact path="/"><Loading/></Route>
+          <Route exact path="/"><LandingPage/></Route>
           <Route path="/videogames"><VideogameHome/></Route>
           <Route path="/videogame/:id"><VideogameDetail/></Route>
           <Route path="/create"><CreateVideogame/></Route>

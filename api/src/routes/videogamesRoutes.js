@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', getAllVideogames);
 router.get('/:id', getVideogameById);
-router.post('/create', createVideogame )
+router.post('/create', createVideogame);
 
 
 

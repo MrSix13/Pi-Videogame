@@ -30,8 +30,8 @@ const FilterVideogame = ({setOrden}) => {
 
     function handleFilterCreated(e){
         e.preventDefault();
-        console.log(e.target.value)
-        dispatch(filterCreated(e.target.value))
+        let valor = e.target.value
+        dispatch(filterCreated(e.target.value)) && setOrden(`ABC ${valor}`);
     }
   return (
     <div className='filter_container'>
@@ -58,10 +58,11 @@ const FilterVideogame = ({setOrden}) => {
             </div>
             <div>
                 <h4>Storage</h4>
-                <form onSubmit={(e)=>handleFilterCreated(e)}>
-                    <input type="hidden" name="box1" value="0"  />
-                    <input type="checkbox" name="box1" value="db"/>
-                </form>
+                    <select onChange={(e)=>handleFilterCreated(e)}>
+                        <option value="all">all</option>
+                        <option value="MyGames">My Games</option>
+                        <option value="ApiGames">Only Api Games</option>
+                    </select>
             </div>
     </div>
   )

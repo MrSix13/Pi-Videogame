@@ -17,7 +17,7 @@ const SearchBar = () => {
   return (
     <div className='search-container'>
         <input onKeyDown={handleKeyGame} value={game}  type="text" onChange={(e)=>setGame(e.target.value)} placeholder='Search Game...' />
-        <button onClick={handleKeyGame} className='search-button' type="submit" ><i className="fa fa-search"></i></button>
+        <button className='search-button'><i className="fa fa-search"></i></button>
     </div>
   )
 }
