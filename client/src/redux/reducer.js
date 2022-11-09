@@ -102,24 +102,7 @@ export default function rootReducer(state = initialState, {type,payload}){
                     ...state,
                     videogames: state.allVideogames
                 }
-              }      
-
-              /*if(payload === "MyGames"){
-                return{
-                    ...state,
-                    videogames: state.videogames.filter((videogame)=>videogame.createdInDb)
-                }
-              }
-              if(payload === "ApiGames"){
-                    const a = state.videogames.filter((videogame)=>!videogame.createdInDb)
-                    console.log(a)  
-                return{
-                    ...state,
-                    videogames: a
-                  }
-                  
-              }*/
-              
+              }         
         const filterCreated = payload === "MyGames" 
                  ? state.allVideogames.filter((videogame)=>videogame.createdInDb)
                  : state.allVideogames.filter((videogame)=>!videogame.createdInDb)

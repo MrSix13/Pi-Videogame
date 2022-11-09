@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export const GET_ALL_VIDEOGAMES = "GET_ALL_VIDEOGAMES";
 export const GET_ALL_GENRES = "GET_ALL_GENRES";
 export const SEARCH_VIDEOGAME = 'SEARCH_VIDEOGAME';
@@ -15,31 +14,28 @@ export const SWITCH_LOADING = "SWITCH_LOADING";
 export const SET_VIDEOGAME = "SET_VIDEOGAME";
 
 
-
-const API_URL = "http://localhost:3001"
-
 export const getAllVideogames = () => async(dispatch)=>{
-    const {data} = await axios.get(`${API_URL}/videogames`)
+    const {data} = await axios.get(`/videogames`)
     return dispatch({type:GET_ALL_VIDEOGAMES, payload: data})
 }
 
 export const getVideogameById = (payload) => async(dispatch)=>{
-    const {data} = await axios.get(`${API_URL}/videogames/${payload}`)
+    const {data} = await axios.get(`/videogames/${payload}`)
     return dispatch({type:GET_VIDEOGAME, payload: data})
 }
 
 export const searchVideogame = (payload) => async(dispatch)=>{
-    const {data} = await axios.get(`${API_URL}/videogames?name=${payload}`)
+    const {data} = await axios.get(`/videogames?name=${payload}`)
     return dispatch({type: SEARCH_VIDEOGAME, payload: data})
 }
 
 export const setVideogame = (payload) => async(dispatch)=>{
-    const {data} = await axios.post(`${API_URL}/videogames/create`, payload)
+    const {data} = await axios.post(`/videogames/create`, payload)
     return dispatch({type: SET_VIDEOGAME, payload: data})
 }
 
 export const getAllGenres = () => async(dispatch)=>{
-    const {data} = await axios.get(`${API_URL}/genress`)
+    const {data} = await axios.get(`/genress`)
     return dispatch({type:GET_ALL_GENRES, payload:data})
 }
 
