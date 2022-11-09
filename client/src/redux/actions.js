@@ -16,6 +16,7 @@ export const SET_VIDEOGAME = "SET_VIDEOGAME";
 
 export const getAllVideogames = () => async(dispatch)=>{
     const {data} = await axios.get(`/videogames`)
+    console.log(data)
     return dispatch({type:GET_ALL_VIDEOGAMES, payload: data})
 }
 
