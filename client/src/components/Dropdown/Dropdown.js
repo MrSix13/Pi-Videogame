@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import FilterVideogame from '../Filter/FilterVideogame';
 import './dropdown.css'
 
-const Dropdown = ({setOrden}) => {
+const Dropdown = ({setCurrentPage}) => {
     const [isActive, setIsActive] = useState(false)
   return (
     <div className='dropdown-container'>
@@ -12,7 +12,7 @@ const Dropdown = ({setOrden}) => {
 
         {isActive && (
             <div className='dropdown_div'>
-                <FilterVideogame setOrden={setOrden}/>
+                <FilterVideogame setCurrentPage={setCurrentPage}/>
             </div>
         )}
 

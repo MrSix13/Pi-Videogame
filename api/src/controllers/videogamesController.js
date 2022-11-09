@@ -79,7 +79,6 @@ const getAllVideogames = async(req,res)=>{
     try {
         if(name){
             let videogameName = totalVideogames.filter((videogame)=>videogame.name.toLowerCase().includes(name.toLowerCase())).slice(0,15)
-            console.log(videogameName.length)
             videogameName.length ? 
                 res.status(201).send(videogameName)
                 :
@@ -105,7 +104,6 @@ const getVideogameById = async(req,res)=>{
                 }
             }]
         })
-
         res.status(200).json(findvideogame.dataValues)
     }else{
         try {

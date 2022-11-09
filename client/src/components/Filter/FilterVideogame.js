@@ -6,32 +6,35 @@ import './filterVideogame.css'
 [ ] Botones/Opciones para filtrar por género y por videojuego existente o agregado por nosotros
 [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating
 */
-const FilterVideogame = ({setOrden}) => {
+const FilterVideogame = ({setCurrentPage}) => {
     const dispatch = useDispatch();
     const myGenres = useSelector((state)=>state.genres)
     
     function handleFilterByGenres(e){
         e.preventDefault();
+        setCurrentPage(1);
         dispatch(filterGenres(e.target.value))
     }
 
     function handleFilter(e){
+        setCurrentPage(1);
         e.preventDefault()
         let valor = e.target.value
 
         if(valor === "A-Z" || valor === "Z-A" || valor === "All"){
-            dispatch(filterAbc(valor)) && setOrden(`ABC ${valor}`);
+            dispatch(filterAbc(valor));
         }
 
         if(valor === "MAX_RATING" || valor === "MIN_RATING"){
-            dispatch(filterRating(valor)) && setOrden(`ABC ${valor}`);
+            dispatch(filterRating(valor));
         }      
     }
 
+
     function handleFilterCreated(e){
         e.preventDefault();
-        let valor = e.target.value
-        dispatch(filterCreated(e.target.value)) && setOrden(`ABC ${valor}`);
+        setCurrentPage(1);
+        dispatch(filterCreated(e.target.value))
     }
   return (
     <div className='filter_container'>

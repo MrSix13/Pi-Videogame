@@ -25,13 +25,14 @@ const VideogameHome = () => {
         dispatch(cleanVideogame())
     },[dispatch])
 
+    console.log(currentPage)
 
     if(videogames.length === 0) return <Loading/>
     return (
         <main className='videogame-hero'>
             <div className="carousel"></div>
             <SearchBar/>
-            <Dropdown setOrden={setOrden}/>
+            <Dropdown setCurrentPage={setCurrentPage}/>
             {loading ? (<Loading/>)
                 : (
                  <>
